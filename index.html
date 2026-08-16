@@ -6,136 +6,153 @@
 <title>Comparación entre la sociedad colonial y la sociedad actual</title>
 <style>
   :root{
-    --bg:#faf6ef;
+    --bg:#1c130d;
     --ink:#2b2117;
     --ink-soft:#5a4c3c;
     --accent:#8a3324;
     --accent-2:#c99a3f;
-    --card:#ffffff;
+    --card:#fffdf9;
     --border:#e4d9c4;
   }
   *{box-sizing:border-box;}
-  body{
+  html,body{
     margin:0;
-    font-family:'Georgia', 'Times New Roman', serif;
+    height:100%;
+    overflow:hidden;
+    font-family:'Georgia','Times New Roman',serif;
     background:var(--bg);
     color:var(--ink);
-    line-height:1.65;
   }
-  header{
-    background:linear-gradient(135deg,var(--accent) 0%,#5e2419 100%);
-    color:#f6ead9;
-    padding:64px 24px 48px;
-    text-align:center;
+  .deck{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  header .kicker{
+  .slide{
+    position:absolute;
+    width:min(1100px, 92vw);
+    height:min(640px, 88vh);
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    padding:56px 64px;
+    opacity:0;
+    transform:translateX(60px) scale(0.98);
+    transition:opacity 0.45s ease, transform 0.45s ease;
+    pointer-events:none;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+  }
+  .slide.active{
+    opacity:1;
+    transform:translateX(0) scale(1);
+    pointer-events:auto;
+    z-index:2;
+  }
+  .slide.prev{
+    transform:translateX(-60px) scale(0.98);
+  }
+  .kicker{
     text-transform:uppercase;
     letter-spacing:2px;
-    font-size:0.8rem;
-    opacity:0.85;
-    font-family:Arial, sans-serif;
-  }
-  header h1{
-    font-size:2.1rem;
-    margin:14px 0 8px;
-    max-width:820px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  header p.subtitle{
-    font-family:Arial, sans-serif;
-    font-size:1rem;
-    opacity:0.9;
-  }
-  nav{
-    background:#fffdf9;
-    border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    z-index:10;
-    display:flex;
-    gap:24px;
-    justify-content:center;
-    padding:12px 16px;
-    flex-wrap:wrap;
-    font-family:Arial, sans-serif;
-    font-size:0.9rem;
-  }
-  nav a{
+    font-size:0.72rem;
     color:var(--accent);
-    text-decoration:none;
-    font-weight:600;
-  }
-  nav a:hover{ text-decoration:underline; }
-  main{
-    max-width:860px;
-    margin:0 auto;
-    padding:40px 24px 80px;
-  }
-  section{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:32px 36px;
-    margin-bottom:32px;
-    box-shadow:0 2px 10px rgba(60,40,20,0.05);
-  }
-  section h2{
-    color:var(--accent);
-    font-size:1.5rem;
-    margin-top:0;
-    border-bottom:2px solid var(--accent-2);
-    padding-bottom:10px;
-  }
-  section h3{
-    color:var(--ink-soft);
-    font-size:1.1rem;
+    font-family:Arial, sans-serif;
+    font-weight:700;
     margin-bottom:6px;
   }
-  .badge{
-    display:inline-block;
+  h1{
+    font-size:2.3rem;
+    color:var(--accent);
+    margin:0 0 6px;
+    line-height:1.15;
+  }
+  h2{
+    font-size:1.7rem;
+    color:var(--accent);
+    margin:0 0 18px;
+    border-bottom:3px solid var(--accent-2);
+    padding-bottom:12px;
+  }
+  h3{
+    color:var(--ink-soft);
+    font-size:1.15rem;
+    margin:0 0 8px;
+  }
+  p{ margin:0 0 14px; font-size:1.05rem; }
+  ul{ margin:0 0 14px; padding-left:22px; }
+  li{ margin-bottom:8px; font-size:1.02rem; }
+  .subtitle{
     font-family:Arial, sans-serif;
-    font-size:0.75rem;
-    background:var(--accent-2);
-    color:#3a2c10;
-    padding:3px 10px;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin-bottom:auto;
+  }
+  .cover{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .cover .badge-row{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:24px;
+    font-family:Arial, sans-serif;
+  }
+  .pill{
+    background:#fbf1de;
+    border:1px solid var(--accent-2);
+    color:var(--accent);
+    padding:6px 16px;
     border-radius:20px;
-    margin-bottom:14px;
+    font-size:0.85rem;
     font-weight:700;
   }
-  ul{padding-left:22px;}
-  li{margin-bottom:8px;}
+  .minutes-tag{
+    position:absolute;
+    top:28px;
+    right:36px;
+    font-family:Arial, sans-serif;
+    font-size:0.8rem;
+    color:#fff;
+    background:var(--accent);
+    padding:5px 14px;
+    border-radius:20px;
+    font-weight:700;
+  }
   .curioso{
     background:#fbf1de;
-    border-left:4px solid var(--accent-2);
-    padding:16px 20px;
-    border-radius:6px;
-    margin:20px 0;
+    border-left:5px solid var(--accent-2);
+    padding:20px 24px;
+    border-radius:8px;
+    margin-top:auto;
   }
-  .curioso strong{color:var(--accent);}
-  .comparison-table{
+  .curioso strong{ color:var(--accent); }
+  table{
     width:100%;
     border-collapse:collapse;
-    margin:20px 0;
     font-family:Arial, sans-serif;
     font-size:0.92rem;
+    margin-top:8px;
   }
-  .comparison-table th, .comparison-table td{
+  th,td{
     border:1px solid var(--border);
     padding:10px 12px;
     text-align:left;
     vertical-align:top;
   }
-  .comparison-table th{
-    background:var(--accent);
-    color:#fff;
-  }
-  .comparison-table tr:nth-child(even){background:#faf6ef;}
+  th{ background:var(--accent); color:#fff; }
+  tr:nth-child(even){ background:#faf6ef; }
   .img-gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-    gap:16px;
-    margin:20px 0;
+    grid-template-columns:repeat(3, 1fr);
+    gap:14px;
+    margin-top:auto;
   }
   .img-placeholder{
     background:#efe4cf;
@@ -147,196 +164,319 @@
     justify-content:center;
     color:var(--ink-soft);
     font-family:Arial, sans-serif;
-    font-size:0.85rem;
+    font-size:0.78rem;
     text-align:center;
-    padding:12px;
+    padding:10px;
   }
-  .timeline{
+  .question-icon{ color:var(--accent-2); font-weight:700; }
+
+  /* Controls */
+  .controls{
+    position:fixed;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:18px;
+    z-index:10;
     font-family:Arial, sans-serif;
-    font-size:0.95rem;
-    color:var(--ink-soft);
   }
-  footer{
+  .nav-btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    font-size:1.2rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .nav-btn:hover{ background:#a5432f; transform:scale(1.07); }
+  .nav-btn:disabled{ opacity:0.35; cursor:default; transform:none; }
+  .counter{
+    color:#f2e6d3;
+    font-size:0.9rem;
+    min-width:70px;
     text-align:center;
-    font-family:Arial, sans-serif;
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    padding:24px;
   }
-  .minutes{
+  .progress-bar{
+    position:fixed;
+    top:0; left:0;
+    height:5px;
+    background:var(--accent-2);
+    z-index:10;
+    transition:width 0.4s ease;
+  }
+  .dots{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:10;
+  }
+  .dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.3);
+    cursor:pointer;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .dot.active{ background:var(--accent-2); transform:scale(1.3); }
+  .hint{
+    position:fixed;
+    bottom:24px;
+    right:32px;
     font-family:Arial, sans-serif;
-    font-size:0.8rem;
-    color:var(--accent);
-    font-weight:700;
-    float:right;
+    font-size:0.75rem;
+    color:rgba(242,230,211,0.6);
+    z-index:10;
+  }
+  @media (max-width:700px){
+    .slide{ padding:36px 26px; }
+    h1{ font-size:1.5rem; }
+    h2{ font-size:1.25rem; }
+    .img-gallery{ grid-template-columns:1fr; }
+    .hint{ display:none; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="kicker">Colegio Montahue Peñalolén · 8° Básico · Historia y Geografía</div>
-  <h1>Comparación entre la sociedad colonial y la sociedad actual</h1>
-  <p class="subtitle">Disertación · Época Colonial de Chile · Sebastián Obach</p>
-</header>
+<div class="progress-bar" id="progressBar" style="width:0%"></div>
+<div class="dots" id="dots"></div>
 
-<nav>
-  <a href="#introduccion">Introducción</a>
-  <a href="#desarrollo">Desarrollo</a>
-  <a href="#tabla">Comparación</a>
-  <a href="#curioso">Dato curioso</a>
-  <a href="#conclusion">Conclusión</a>
-</nav>
+<div class="deck" id="deck">
 
-<main>
+  <div class="slide cover" data-index="0">
+    <div class="kicker">Colegio Montahue Peñalolén · 8° Básico · Historia y Geografía</div>
+    <h1>Comparación entre la sociedad colonial<br>y la sociedad actual</h1>
+    <p class="subtitle" style="margin:0;">Disertación · Época Colonial de Chile</p>
+    <div class="badge-row">
+      <span class="pill">Sebastián Obach</span>
+      <span class="pill">10 minutos</span>
+      <span class="pill">1541 – 1810</span>
+    </div>
+  </div>
 
-  <section id="introduccion">
-    <span class="minutes">1 min</span>
+  <div class="slide" data-index="1">
+    <div class="minutes-tag">1 min · Introducción</div>
     <h2>Introducción</h2>
     <p><strong>Tema:</strong> Comparación entre la sociedad colonial y la sociedad actual.</p>
-    <p class="timeline"><strong>Período:</strong> Época Colonial de Chile, aproximadamente entre 1541 (fundación de Santiago) y 1810 (inicio del proceso de independencia).</p>
+    <p><strong>Período:</strong> Época Colonial de Chile, aproximadamente entre 1541 (fundación de Santiago) y 1810 (inicio del proceso de independencia).</p>
     <p>
       Estudiar la sociedad colonial y compararla con la sociedad actual es importante porque nos permite
       entender de dónde vienen muchas de las costumbres, desigualdades y estructuras que todavía existen en Chile.
       La Colonia dejó una huella profunda en la forma en que se organiza el trabajo, la educación, los derechos
-      de las personas y la vida en las ciudades. Comparar ambos períodos ayuda a valorar los cambios logrados
-      y a reflexionar sobre lo que aún falta por mejorar como sociedad.
+      de las personas y la vida en las ciudades.
     </p>
-  </section>
+    <p>Comparar ambos períodos ayuda a valorar los cambios logrados y a reflexionar sobre lo que aún falta por mejorar como sociedad.</p>
+  </div>
 
-  <section id="desarrollo">
-    <span class="minutes">7 min</span>
-    <h2>Desarrollo del tema</h2>
-
-    <h3>1. Organización social colonial</h3>
+  <div class="slide" data-index="2">
+    <div class="minutes-tag">Desarrollo · 1/6</div>
+    <h2>Organización social colonial</h2>
     <p>
       La sociedad colonial estaba dividida en grupos muy rígidos y desiguales: peninsulares (españoles nacidos
       en España), criollos (hijos de españoles nacidos en América), mestizos, indígenas y esclavos africanos.
+    </p>
+    <p>
       El lugar que ocupaba una persona en esta pirámide social determinaba casi todos los aspectos de su vida:
       qué trabajo podía tener, si podía estudiar, qué cargos públicos podía ocupar y hasta con quién podía casarse.
       No existía la idea de que todas las personas nacieran con los mismos derechos.
     </p>
+    <div class="img-gallery" style="grid-template-columns:1fr;">
+      <div class="img-placeholder">Imagen: pirámide social colonial (reemplazar por imagen real)</div>
+    </div>
+  </div>
 
-    <h3>2. Sistemas de trabajo colonial</h3>
+  <div class="slide" data-index="3">
+    <div class="minutes-tag">Desarrollo · 2/6</div>
+    <h2>Sistemas de trabajo colonial</h2>
     <p>
       Durante la Colonia se utilizaron sistemas de trabajo obligatorio y muy injustos para la población indígena,
       como la <strong>encomienda</strong> (los indígenas debían trabajar y pagar tributo a un encomendero a
-      cambio de "protección" y evangelización) y más tarde la mita. Estos sistemas se basaban en el trabajo
-      forzado, con jornadas extensas y sin remuneración justa, y estuvieron acompañados también de la
-      esclavitud de personas afrodescendientes.
+      cambio de "protección" y evangelización) y más tarde la mita.
     </p>
-
-    <h3>3. Derechos de las personas</h3>
     <p>
-      En la Colonia los derechos dependían del origen étnico, el género y la posición social. Los indígenas y
-      los esclavos prácticamente no tenían derechos legales propios, las mujeres no podían participar en la
-      vida pública ni política, y solo un grupo reducido de hombres españoles o criollos con recursos accedía
-      a la educación, la propiedad y los cargos de poder.
+      Estos sistemas se basaban en el trabajo forzado, con jornadas extensas y sin remuneración justa, y
+      estuvieron acompañados también de la esclavitud de personas afrodescendientes.
     </p>
+    <div class="img-gallery" style="grid-template-columns:1fr;">
+      <div class="img-placeholder">Imagen: trabajadores en la encomienda (reemplazar por imagen real)</div>
+    </div>
+  </div>
 
-    <h3>4. Educación, trabajo y participación ciudadana hoy</h3>
+  <div class="slide" data-index="4">
+    <div class="minutes-tag">Desarrollo · 3/6</div>
+    <h2>Derechos de las personas</h2>
     <p>
-      En la actualidad, al menos en el plano legal, todas las personas son consideradas iguales ante la ley:
-      existe el derecho a la educación gratuita y obligatoria, el trabajo está regulado por leyes laborales
-      (sueldo mínimo, jornada de trabajo, seguridad social) y todas las personas mayores de edad pueden votar
-      y participar en la vida política del país, sin importar su origen o género.
+      En la Colonia los derechos dependían del origen étnico, el género y la posición social.
     </p>
+    <ul>
+      <li>Los indígenas y esclavos prácticamente no tenían derechos legales propios.</li>
+      <li>Las mujeres no podían participar en la vida pública ni política.</li>
+      <li>Solo un grupo reducido de hombres españoles o criollos con recursos accedía a la educación, la propiedad y los cargos de poder.</li>
+    </ul>
+  </div>
 
-    <h3>5. Elementos del pasado colonial que aún permanecen</h3>
+  <div class="slide" data-index="5">
+    <div class="minutes-tag">Desarrollo · 4/6</div>
+    <h2>Educación, trabajo y participación hoy</h2>
+    <p>
+      En la actualidad, al menos en el plano legal, todas las personas son consideradas iguales ante la ley.
+    </p>
+    <ul>
+      <li>Derecho a la educación gratuita y obligatoria.</li>
+      <li>Trabajo regulado por leyes laborales (sueldo mínimo, jornada, seguridad social).</li>
+      <li>Todas las personas mayores de edad pueden votar y participar en la vida política, sin importar su origen o género.</li>
+    </ul>
+  </div>
+
+  <div class="slide" data-index="6">
+    <div class="minutes-tag">Desarrollo · 5/6</div>
+    <h2>Elementos coloniales que aún permanecen</h2>
     <ul>
       <li>Desigualdad económica y social heredada entre distintos grupos de la población.</li>
       <li>Concentración de la tierra y la riqueza en pocas familias, con raíces en el sistema de haciendas coloniales.</li>
       <li>Discriminación hacia los pueblos indígenas, que persiste en distintos ámbitos de la vida actual.</li>
       <li>Ciudades organizadas en torno a una plaza central, herencia directa del trazado urbano colonial.</li>
-      <li>Influencia de la Iglesia Católica en tradiciones, festividades y en parte de la cultura chilena.</li>
+      <li>Influencia de la Iglesia Católica en tradiciones, festividades y parte de la cultura chilena.</li>
     </ul>
+  </div>
 
-    <div class="img-gallery">
-      <div class="img-placeholder">Imagen: pirámide social colonial<br>(reemplazar por imagen real)</div>
-      <div class="img-placeholder">Imagen: trabajadores en la encomienda<br>(reemplazar por imagen real)</div>
-      <div class="img-placeholder">Imagen: sociedad chilena actual<br>(reemplazar por imagen real)</div>
-    </div>
-  </section>
-
-  <section id="tabla">
+  <div class="slide" data-index="7">
+    <div class="minutes-tag">Desarrollo · 6/6 · Comparación</div>
     <h2>Cuadro comparativo</h2>
-    <table class="comparison-table">
+    <table>
       <thead>
-        <tr>
-          <th>Aspecto</th>
-          <th>Sociedad colonial</th>
-          <th>Sociedad actual</th>
-        </tr>
+        <tr><th>Aspecto</th><th>Sociedad colonial</th><th>Sociedad actual</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Organización social</td>
-          <td>Rígida y jerárquica (peninsulares, criollos, mestizos, indígenas, esclavos)</td>
-          <td>Formalmente igualitaria ante la ley, aunque persisten desigualdades económicas</td>
-        </tr>
-        <tr>
-          <td>Trabajo</td>
-          <td>Encomienda, mita y esclavitud; trabajo forzado y sin derechos</td>
-          <td>Trabajo remunerado, regulado por leyes laborales y sindicatos</td>
-        </tr>
-        <tr>
-          <td>Educación</td>
-          <td>Reservada casi exclusivamente a hombres españoles/criollos de élite</td>
-          <td>Derecho universal, gratuita y obligatoria hasta la enseñanza media</td>
-        </tr>
-        <tr>
-          <td>Participación política</td>
-          <td>Solo cabildos con participación limitada a criollos ricos</td>
-          <td>Voto universal desde los 18 años, elecciones periódicas</td>
-        </tr>
-        <tr>
-          <td>Derechos de la mujer</td>
-          <td>Sin participación pública ni política; rol doméstico impuesto</td>
-          <td>Igualdad legal de derechos, acceso a educación, trabajo y política</td>
-        </tr>
+        <tr><td>Organización social</td><td>Rígida y jerárquica</td><td>Formalmente igualitaria ante la ley</td></tr>
+        <tr><td>Trabajo</td><td>Encomienda, mita, esclavitud</td><td>Trabajo remunerado y regulado</td></tr>
+        <tr><td>Educación</td><td>Solo élite española/criolla</td><td>Derecho universal y gratuito</td></tr>
+        <tr><td>Participación política</td><td>Solo cabildos de criollos ricos</td><td>Voto universal desde los 18 años</td></tr>
+        <tr><td>Derechos de la mujer</td><td>Sin participación pública</td><td>Igualdad legal de derechos</td></tr>
       </tbody>
     </table>
-  </section>
+  </div>
 
-  <section id="curioso">
-    <h2>Dato curioso</h2>
+  <div class="slide" data-index="8">
+    <div class="minutes-tag">Dato curioso</div>
+    <h2>¿Sabías que...?</h2>
     <div class="curioso">
-      <strong>¿Sabías que...?</strong> Muchas ciudades chilenas actuales, como Santiago, La Serena o Concepción,
+      <strong>Dato curioso:</strong> Muchas ciudades chilenas actuales, como Santiago, La Serena o Concepción,
       todavía conservan el "damero" o trazado en cuadrícula que impusieron los españoles en la época colonial,
       con una plaza de armas central rodeada por la iglesia, el cabildo y las casas de las familias más
       importantes. ¡Ese diseño urbano tiene casi 500 años y sigue determinando cómo nos movemos por el centro
       de nuestras ciudades hoy en día!
     </div>
-  </section>
+  </div>
 
-  <section id="conclusion">
-    <span class="minutes">2 min</span>
+  <div class="slide" data-index="9">
+    <div class="minutes-tag">2 min · Conclusión</div>
     <h2>Conclusión</h2>
-    <h3>¿Qué fue lo más importante que aprendí?</h3>
+    <h3><span class="question-icon">?</span> ¿Qué fue lo más importante que aprendí?</h3>
     <p>
-      Lo más importante que aprendí es que la sociedad actual no surgió de la nada: muchas de las estructuras,
-      desigualdades y también los avances que tenemos hoy son consecuencia directa de decisiones y sistemas
-      que se establecieron durante la Colonia.
+      Que la sociedad actual no surgió de la nada: muchas de las estructuras, desigualdades y también los
+      avances que tenemos hoy son consecuencia directa de decisiones y sistemas establecidos durante la Colonia.
     </p>
-    <h3>¿Qué impacto tuvo este tema en la historia de Chile?</h3>
+    <h3><span class="question-icon">?</span> ¿Qué impacto tuvo en la historia de Chile?</h3>
     <p>
       La organización social colonial marcó profundamente la formación de Chile como país, generando
-      desigualdades que se mantuvieron mucho después de la independencia y que incluso hoy siguen siendo
-      parte del debate público.
+      desigualdades que se mantuvieron mucho después de la independencia.
     </p>
-    <h3>¿Qué enseñanza deja para la actualidad?</h3>
+  </div>
+
+  <div class="slide" data-index="10">
+    <div class="minutes-tag">Conclusión</div>
+    <h2>¿Qué enseñanza deja para la actualidad?</h2>
     <p>
       Conocer el origen histórico de estas desigualdades nos permite entenderlas mejor y valorar los derechos
       que se han conquistado con el tiempo, como la igualdad ante la ley, la educación para todos y la
-      participación ciudadana, además de recordarnos que como sociedad aún tenemos desafíos pendientes.
+      participación ciudadana.
     </p>
-  </section>
+    <p>
+      También nos recuerda que, como sociedad, aún tenemos desafíos pendientes.
+    </p>
+    <p style="margin-top:auto; text-align:center; color:var(--ink-soft); font-family:Arial, sans-serif; font-size:0.9rem;">
+      Gracias por su atención · Sebastián Obach · 8°B
+    </p>
+  </div>
 
-</main>
+</div>
 
-<footer>
-  Disertación · Historia y Geografía · Época Colonial · 8° Básico B · Colegio Montahue Peñalolén
-</footer>
+<div class="controls">
+  <button class="nav-btn" id="prevBtn" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 11</span>
+  <button class="nav-btn" id="nextBtn" aria-label="Siguiente">›</button>
+</div>
+<div class="hint">Usa las flechas ← → o haz clic para avanzar</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const dotsContainer = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  const progressBar = document.getElementById('progressBar');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let current = 0;
+
+  slides.forEach((s, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = Array.from(dotsContainer.children);
+
+  function render(){
+    slides.forEach((s, i) => {
+      s.classList.remove('active','prev');
+      if(i === current) s.classList.add('active');
+      else if(i < current) s.classList.add('prev');
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    counter.textContent = (current + 1) + ' / ' + total;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  function goTo(i){
+    if(i < 0 || i >= total) return;
+    current = i;
+    render();
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if(e.key === 'ArrowLeft') goTo(current - 1);
+  });
+
+  document.getElementById('deck').addEventListener('click', (e) => {
+    if(e.target.closest('.nav-btn') || e.target.closest('.dot')) return;
+    const rect = document.getElementById('deck').getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    if (x > rect.width / 2) goTo(current + 1);
+    else goTo(current - 1);
+  });
+
+  render();
+</script>
 
 </body>
 </html>
