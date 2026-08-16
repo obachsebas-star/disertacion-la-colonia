@@ -6,13 +6,19 @@
 <title>Comparación entre la sociedad colonial y la sociedad actual</title>
 <style>
   :root{
-    --bg:#1c130d;
-    --ink:#2b2117;
-    --ink-soft:#5a4c3c;
-    --accent:#8a3324;
-    --accent-2:#c99a3f;
-    --card:#fffdf9;
-    --border:#e4d9c4;
+    --bg:#0b1220;
+    --bg-2:#111b2e;
+    --navy:#0f1c33;
+    --navy-2:#16294a;
+    --gold:#c9a24b;
+    --gold-light:#e6c878;
+    --cream:#f4efe2;
+    --ink:#1b2333;
+    --ink-soft:#4a5266;
+    --card:#fbf8f1;
+    --border:#d9cba0;
+    --good:#2f7a4f;
+    --bad:#a53d3d;
   }
   *{box-sizing:border-box;}
   html,body{
@@ -20,7 +26,10 @@
     height:100%;
     overflow:hidden;
     font-family:'Georgia','Times New Roman',serif;
-    background:var(--bg);
+    background:
+      radial-gradient(ellipse at top left, #1a2b4d 0%, transparent 55%),
+      radial-gradient(ellipse at bottom right, #241a0f 0%, transparent 55%),
+      var(--bg);
     color:var(--ink);
   }
   .deck{
@@ -33,12 +42,13 @@
   }
   .slide{
     position:absolute;
-    width:min(1100px, 92vw);
-    height:min(640px, 88vh);
+    width:min(1120px, 92vw);
+    height:min(660px, 88vh);
     background:var(--card);
-    border-radius:16px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.45);
-    padding:56px 64px;
+    border-radius:18px;
+    border:1px solid var(--gold);
+    box-shadow:0 25px 70px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,162,75,0.15);
+    padding:52px 60px;
     opacity:0;
     transform:translateX(60px) scale(0.98);
     transition:opacity 0.45s ease, transform 0.45s ease;
@@ -53,198 +63,180 @@
     pointer-events:auto;
     z-index:2;
   }
-  .slide.prev{
-    transform:translateX(-60px) scale(0.98);
-  }
+  .slide.prev{ transform:translateX(-60px) scale(0.98); }
+
   .kicker{
     text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:0.72rem;
-    color:var(--accent);
-    font-family:Arial, sans-serif;
+    letter-spacing:3px;
+    font-size:0.7rem;
+    color:var(--gold);
+    font-family:'Trebuchet MS', Arial, sans-serif;
     font-weight:700;
-    margin-bottom:6px;
+    margin-bottom:8px;
   }
   h1{
     font-size:2.3rem;
-    color:var(--accent);
+    color:var(--navy);
     margin:0 0 6px;
     line-height:1.15;
+    font-weight:700;
   }
   h2{
-    font-size:1.7rem;
-    color:var(--accent);
+    font-size:1.65rem;
+    color:var(--navy);
     margin:0 0 18px;
-    border-bottom:3px solid var(--accent-2);
+    border-bottom:3px solid var(--gold);
     padding-bottom:12px;
+    font-weight:700;
   }
   h3{
-    color:var(--ink-soft);
-    font-size:1.15rem;
+    color:var(--navy-2);
+    font-size:1.12rem;
     margin:0 0 8px;
   }
-  p{ margin:0 0 14px; font-size:1.05rem; }
+  p{ margin:0 0 14px; font-size:1.03rem; line-height:1.6; }
   ul{ margin:0 0 14px; padding-left:22px; }
-  li{ margin-bottom:8px; font-size:1.02rem; }
+  li{ margin-bottom:8px; font-size:1rem; }
   .subtitle{
-    font-family:Arial, sans-serif;
-    font-size:1.05rem;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    font-size:1.02rem;
     color:var(--ink-soft);
-    margin-bottom:auto;
   }
-  .cover{
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-  }
+  .cover{ align-items:center; justify-content:center; text-align:center; }
   .cover .badge-row{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    margin-top:24px;
-    font-family:Arial, sans-serif;
+    display:flex; gap:10px; justify-content:center; margin-top:26px;
+    font-family:'Trebuchet MS', Arial, sans-serif;
   }
   .pill{
-    background:#fbf1de;
-    border:1px solid var(--accent-2);
-    color:var(--accent);
-    padding:6px 16px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    border:1px solid #a9843a;
+    color:#3a2c0d;
+    padding:7px 18px;
     border-radius:20px;
     font-size:0.85rem;
     font-weight:700;
   }
-  .minutes-tag{
-    position:absolute;
-    top:28px;
-    right:36px;
-    font-family:Arial, sans-serif;
-    font-size:0.8rem;
-    color:#fff;
-    background:var(--accent);
-    padding:5px 14px;
-    border-radius:20px;
-    font-weight:700;
+  .crest{
+    width:64px; height:64px; margin:0 auto 18px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold-light); font-size:1.6rem; font-weight:700;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+  }
+  .tag{
+    position:absolute; top:26px; right:34px;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    font-size:0.78rem; color:#fff;
+    background:linear-gradient(135deg,var(--navy-2),var(--navy));
+    border:1px solid var(--gold);
+    padding:6px 16px; border-radius:20px; font-weight:700;
   }
   .curioso{
-    background:#fbf1de;
-    border-left:5px solid var(--accent-2);
-    padding:20px 24px;
-    border-radius:8px;
-    margin-top:auto;
+    background:linear-gradient(135deg,#fbf1de,#f4e4bd);
+    border-left:5px solid var(--gold);
+    padding:22px 26px; border-radius:8px; margin-top:14px;
   }
-  .curioso strong{ color:var(--accent); }
-  table{
-    width:100%;
-    border-collapse:collapse;
-    font-family:Arial, sans-serif;
-    font-size:0.92rem;
-    margin-top:8px;
-  }
-  th,td{
-    border:1px solid var(--border);
-    padding:10px 12px;
-    text-align:left;
-    vertical-align:top;
-  }
-  th{ background:var(--accent); color:#fff; }
-  tr:nth-child(even){ background:#faf6ef; }
-  .img-gallery{
+  .curioso strong{ color:var(--navy); }
+
+  /* Flip cards */
+  .flip-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:14px;
+    gap:16px;
     margin-top:auto;
   }
-  .img-placeholder{
-    background:#efe4cf;
-    border:1px dashed var(--accent-2);
-    border-radius:8px;
-    aspect-ratio:4/3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--ink-soft);
-    font-family:Arial, sans-serif;
-    font-size:0.78rem;
-    text-align:center;
-    padding:10px;
+  .flip-card{
+    perspective:1000px;
+    height:150px;
+    cursor:pointer;
   }
-  .question-icon{ color:var(--accent-2); font-weight:700; }
+  .flip-inner{
+    position:relative; width:100%; height:100%;
+    transition:transform 0.6s;
+    transform-style:preserve-3d;
+  }
+  .flip-card.flipped .flip-inner{ transform:rotateY(180deg); }
+  .flip-front, .flip-back{
+    position:absolute; width:100%; height:100%;
+    backface-visibility:hidden;
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:12px;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+  }
+  .flip-front{
+    background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    color:var(--gold-light);
+    border:1px solid var(--gold);
+    font-weight:700; font-size:0.95rem;
+  }
+  .flip-front::after{
+    content:'toca para ver más';
+    position:absolute; bottom:8px; font-size:0.62rem; color:rgba(230,200,120,0.7);
+    font-weight:400;
+  }
+  .flip-back{
+    background:#fff; color:var(--ink); transform:rotateY(180deg);
+    border:1px solid var(--border); font-size:0.82rem; line-height:1.4;
+  }
 
-  /* Controls */
+  table{ width:100%; border-collapse:collapse; font-family:'Trebuchet MS', Arial, sans-serif; font-size:0.9rem; margin-top:8px; }
+  th,td{ border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top; }
+  th{ background:var(--navy); color:var(--gold-light); }
+  tr:nth-child(even){ background:#f4efe0; }
+  tr.clickable{ cursor:pointer; }
+  tr.clickable:hover{ background:#ecdfb8; }
+  .row-detail{ display:none; background:#fffaf0 !important; font-style:italic; color:var(--ink-soft); }
+  .row-detail.show{ display:table-row; }
+
+  /* Quiz */
+  .quiz-q{ margin-bottom:22px; }
+  .quiz-q h3{ font-size:1.08rem; color:var(--navy); }
+  .options{ display:grid; grid-template-columns:1fr 1fr; gap:10px; font-family:'Trebuchet MS', Arial, sans-serif; }
+  .opt{
+    border:2px solid var(--border); border-radius:8px; padding:12px 14px;
+    cursor:pointer; font-size:0.92rem; background:#fff;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .opt:hover{ border-color:var(--gold); }
+  .opt.correct{ background:#e4f3e9; border-color:var(--good); color:var(--good); font-weight:700; }
+  .opt.wrong{ background:#fbe7e7; border-color:var(--bad); color:var(--bad); font-weight:700; }
+  .opt.disabled{ pointer-events:none; opacity:0.75; }
+  .score-box{
+    margin-top:auto; text-align:center; font-family:'Trebuchet MS', Arial, sans-serif;
+    padding:16px; background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    border:1px solid var(--gold); border-radius:10px; color:var(--gold-light);
+    font-weight:700; font-size:1.1rem;
+  }
+
   .controls{
-    position:fixed;
-    bottom:24px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    align-items:center;
-    gap:18px;
-    z-index:10;
-    font-family:Arial, sans-serif;
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+    display:flex; align-items:center; gap:18px; z-index:10;
+    font-family:'Trebuchet MS', Arial, sans-serif;
   }
   .nav-btn{
-    background:var(--accent);
-    color:#fff;
-    border:none;
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    font-size:1.2rem;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 14px rgba(0,0,0,0.35);
-    transition:transform 0.15s ease, background 0.15s ease;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#2b2109; border:1px solid #8f6f2c;
+    width:46px; height:46px; border-radius:50%; font-size:1.2rem; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.45);
+    transition:transform 0.15s ease;
   }
-  .nav-btn:hover{ background:#a5432f; transform:scale(1.07); }
-  .nav-btn:disabled{ opacity:0.35; cursor:default; transform:none; }
-  .counter{
-    color:#f2e6d3;
-    font-size:0.9rem;
-    min-width:70px;
-    text-align:center;
-  }
-  .progress-bar{
-    position:fixed;
-    top:0; left:0;
-    height:5px;
-    background:var(--accent-2);
-    z-index:10;
-    transition:width 0.4s ease;
-  }
-  .dots{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:8px;
-    z-index:10;
-  }
-  .dot{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.3);
-    cursor:pointer;
-    transition:background 0.2s ease, transform 0.2s ease;
-  }
-  .dot.active{ background:var(--accent-2); transform:scale(1.3); }
-  .hint{
-    position:fixed;
-    bottom:24px;
-    right:32px;
-    font-family:Arial, sans-serif;
-    font-size:0.75rem;
-    color:rgba(242,230,211,0.6);
-    z-index:10;
-  }
+  .nav-btn:hover{ transform:scale(1.08); }
+  .nav-btn:disabled{ opacity:0.3; cursor:default; transform:none; }
+  .counter{ color:var(--gold-light); font-size:0.9rem; min-width:70px; text-align:center; }
+  .progress-bar{ position:fixed; top:0; left:0; height:5px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); z-index:10; transition:width 0.4s ease; }
+  .dots{ position:fixed; top:20px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:10; }
+  .dot{ width:9px; height:9px; border-radius:50%; background:rgba(230,200,120,0.25); cursor:pointer; transition:background 0.2s ease, transform 0.2s ease; }
+  .dot.active{ background:var(--gold); transform:scale(1.3); }
+  .hint{ position:fixed; bottom:24px; right:32px; font-family:'Trebuchet MS', Arial, sans-serif; font-size:0.75rem; color:rgba(230,200,120,0.55); z-index:10; }
+
   @media (max-width:700px){
-    .slide{ padding:36px 26px; }
-    h1{ font-size:1.5rem; }
-    h2{ font-size:1.25rem; }
-    .img-gallery{ grid-template-columns:1fr; }
+    .slide{ padding:34px 24px; }
+    h1{ font-size:1.4rem; } h2{ font-size:1.2rem; }
+    .flip-grid{ grid-template-columns:1fr; } .options{ grid-template-columns:1fr; }
     .hint{ display:none; }
   }
 </style>
@@ -257,6 +249,7 @@
 <div class="deck" id="deck">
 
   <div class="slide cover" data-index="0">
+    <div class="crest">EC</div>
     <div class="kicker">Colegio Montahue Peñalolén · 8° Básico · Historia y Geografía</div>
     <h1>Comparación entre la sociedad colonial<br>y la sociedad actual</h1>
     <p class="subtitle" style="margin:0;">Disertación · Época Colonial de Chile</p>
@@ -268,59 +261,55 @@
   </div>
 
   <div class="slide" data-index="1">
-    <div class="minutes-tag">1 min · Introducción</div>
+    <div class="tag">1 min · Introducción</div>
     <h2>Introducción</h2>
     <p><strong>Tema:</strong> Comparación entre la sociedad colonial y la sociedad actual.</p>
     <p><strong>Período:</strong> Época Colonial de Chile, aproximadamente entre 1541 (fundación de Santiago) y 1810 (inicio del proceso de independencia).</p>
     <p>
-      Estudiar la sociedad colonial y compararla con la sociedad actual es importante porque nos permite
-      entender de dónde vienen muchas de las costumbres, desigualdades y estructuras que todavía existen en Chile.
-      La Colonia dejó una huella profunda en la forma en que se organiza el trabajo, la educación, los derechos
-      de las personas y la vida en las ciudades.
+      Estudiar la sociedad colonial y compararla con la sociedad actual permite entender de dónde vienen
+      muchas de las costumbres, desigualdades y estructuras que todavía existen en Chile. La Colonia dejó una
+      huella profunda en la forma en que se organiza el trabajo, la educación, los derechos de las personas y
+      la vida en las ciudades.
     </p>
-    <p>Comparar ambos períodos ayuda a valorar los cambios logrados y a reflexionar sobre lo que aún falta por mejorar como sociedad.</p>
+    <p>Comparar ambos períodos ayuda a valorar los cambios logrados y a reflexionar sobre lo que aún falta por mejorar.</p>
   </div>
 
   <div class="slide" data-index="2">
-    <div class="minutes-tag">Desarrollo · 1/6</div>
+    <div class="tag">Desarrollo · 1/6</div>
     <h2>Organización social colonial</h2>
     <p>
-      La sociedad colonial estaba dividida en grupos muy rígidos y desiguales: peninsulares (españoles nacidos
-      en España), criollos (hijos de españoles nacidos en América), mestizos, indígenas y esclavos africanos.
+      La sociedad colonial estaba dividida en grupos muy rígidos y desiguales: peninsulares, criollos,
+      mestizos, indígenas y esclavos africanos. El lugar que ocupaba una persona en esta pirámide social
+      determinaba casi todos los aspectos de su vida: qué trabajo podía tener, si podía estudiar, qué cargos
+      públicos podía ocupar y hasta con quién podía casarse.
     </p>
-    <p>
-      El lugar que ocupaba una persona en esta pirámide social determinaba casi todos los aspectos de su vida:
-      qué trabajo podía tener, si podía estudiar, qué cargos públicos podía ocupar y hasta con quién podía casarse.
-      No existía la idea de que todas las personas nacieran con los mismos derechos.
-    </p>
-    <div class="img-gallery" style="grid-template-columns:1fr;">
-      <div class="img-placeholder">Imagen: pirámide social colonial (reemplazar por imagen real)</div>
-    </div>
+    <p style="color:var(--ink-soft); font-style:italic;">Toca las tarjetas para conocer cada grupo social 👇</p>
+    <div class="flip-grid" id="socialGrid"></div>
   </div>
 
   <div class="slide" data-index="3">
-    <div class="minutes-tag">Desarrollo · 2/6</div>
+    <div class="tag">Desarrollo · 2/6</div>
     <h2>Sistemas de trabajo colonial</h2>
     <p>
-      Durante la Colonia se utilizaron sistemas de trabajo obligatorio y muy injustos para la población indígena,
-      como la <strong>encomienda</strong> (los indígenas debían trabajar y pagar tributo a un encomendero a
-      cambio de "protección" y evangelización) y más tarde la mita.
+      Durante la Colonia se utilizaron sistemas de trabajo obligatorio y muy injustos para la población
+      indígena, como la <strong>encomienda</strong> (los indígenas debían trabajar y pagar tributo a un
+      encomendero a cambio de "protección" y evangelización) y más tarde la mita.
     </p>
     <p>
       Estos sistemas se basaban en el trabajo forzado, con jornadas extensas y sin remuneración justa, y
       estuvieron acompañados también de la esclavitud de personas afrodescendientes.
     </p>
-    <div class="img-gallery" style="grid-template-columns:1fr;">
-      <div class="img-placeholder">Imagen: trabajadores en la encomienda (reemplazar por imagen real)</div>
+    <div class="curioso">
+      <strong>¿Sabías que...?</strong> La palabra "encomienda" viene del verbo "encomendar", porque en teoría
+      se "encomendaba" un grupo de indígenas a un español para que los evangelizara y protegiera — en la
+      práctica, casi siempre significó explotación laboral.
     </div>
   </div>
 
   <div class="slide" data-index="4">
-    <div class="minutes-tag">Desarrollo · 3/6</div>
+    <div class="tag">Desarrollo · 3/6</div>
     <h2>Derechos de las personas</h2>
-    <p>
-      En la Colonia los derechos dependían del origen étnico, el género y la posición social.
-    </p>
+    <p>En la Colonia los derechos dependían del origen étnico, el género y la posición social.</p>
     <ul>
       <li>Los indígenas y esclavos prácticamente no tenían derechos legales propios.</li>
       <li>Las mujeres no podían participar en la vida pública ni política.</li>
@@ -329,11 +318,9 @@
   </div>
 
   <div class="slide" data-index="5">
-    <div class="minutes-tag">Desarrollo · 4/6</div>
+    <div class="tag">Desarrollo · 4/6</div>
     <h2>Educación, trabajo y participación hoy</h2>
-    <p>
-      En la actualidad, al menos en el plano legal, todas las personas son consideradas iguales ante la ley.
-    </p>
+    <p>En la actualidad, al menos en el plano legal, todas las personas son consideradas iguales ante la ley.</p>
     <ul>
       <li>Derecho a la educación gratuita y obligatoria.</li>
       <li>Trabajo regulado por leyes laborales (sueldo mínimo, jornada, seguridad social).</li>
@@ -342,36 +329,21 @@
   </div>
 
   <div class="slide" data-index="6">
-    <div class="minutes-tag">Desarrollo · 5/6</div>
+    <div class="tag">Desarrollo · 5/6</div>
     <h2>Elementos coloniales que aún permanecen</h2>
-    <ul>
-      <li>Desigualdad económica y social heredada entre distintos grupos de la población.</li>
-      <li>Concentración de la tierra y la riqueza en pocas familias, con raíces en el sistema de haciendas coloniales.</li>
-      <li>Discriminación hacia los pueblos indígenas, que persiste en distintos ámbitos de la vida actual.</li>
-      <li>Ciudades organizadas en torno a una plaza central, herencia directa del trazado urbano colonial.</li>
-      <li>Influencia de la Iglesia Católica en tradiciones, festividades y parte de la cultura chilena.</li>
-    </ul>
+    <p style="color:var(--ink-soft); font-style:italic;">Toca cada tarjeta para ver el ejemplo actual 👇</p>
+    <div class="flip-grid" id="legacyGrid"></div>
   </div>
 
   <div class="slide" data-index="7">
-    <div class="minutes-tag">Desarrollo · 6/6 · Comparación</div>
+    <div class="tag">Desarrollo · 6/6 · Comparación</div>
     <h2>Cuadro comparativo</h2>
-    <table>
-      <thead>
-        <tr><th>Aspecto</th><th>Sociedad colonial</th><th>Sociedad actual</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Organización social</td><td>Rígida y jerárquica</td><td>Formalmente igualitaria ante la ley</td></tr>
-        <tr><td>Trabajo</td><td>Encomienda, mita, esclavitud</td><td>Trabajo remunerado y regulado</td></tr>
-        <tr><td>Educación</td><td>Solo élite española/criolla</td><td>Derecho universal y gratuito</td></tr>
-        <tr><td>Participación política</td><td>Solo cabildos de criollos ricos</td><td>Voto universal desde los 18 años</td></tr>
-        <tr><td>Derechos de la mujer</td><td>Sin participación pública</td><td>Igualdad legal de derechos</td></tr>
-      </tbody>
-    </table>
+    <p style="color:var(--ink-soft); font-style:italic; margin-bottom:6px;">Haz clic en una fila para ver un detalle extra.</p>
+    <table id="compareTable"></table>
   </div>
 
   <div class="slide" data-index="8">
-    <div class="minutes-tag">Dato curioso</div>
+    <div class="tag">Dato curioso</div>
     <h2>¿Sabías que...?</h2>
     <div class="curioso">
       <strong>Dato curioso:</strong> Muchas ciudades chilenas actuales, como Santiago, La Serena o Concepción,
@@ -383,32 +355,37 @@
   </div>
 
   <div class="slide" data-index="9">
-    <div class="minutes-tag">2 min · Conclusión</div>
+    <div class="tag">Pon a prueba lo aprendido</div>
+    <h2>Quiz rápido</h2>
+    <div id="quizContainer"></div>
+    <div class="score-box" id="scoreBox">Puntaje: 0 / 4</div>
+  </div>
+
+  <div class="slide" data-index="10">
+    <div class="tag">2 min · Conclusión</div>
     <h2>Conclusión</h2>
-    <h3><span class="question-icon">?</span> ¿Qué fue lo más importante que aprendí?</h3>
+    <h3>¿Qué fue lo más importante que aprendí?</h3>
     <p>
       Que la sociedad actual no surgió de la nada: muchas de las estructuras, desigualdades y también los
       avances que tenemos hoy son consecuencia directa de decisiones y sistemas establecidos durante la Colonia.
     </p>
-    <h3><span class="question-icon">?</span> ¿Qué impacto tuvo en la historia de Chile?</h3>
+    <h3>¿Qué impacto tuvo en la historia de Chile?</h3>
     <p>
       La organización social colonial marcó profundamente la formación de Chile como país, generando
       desigualdades que se mantuvieron mucho después de la independencia.
     </p>
   </div>
 
-  <div class="slide" data-index="10">
-    <div class="minutes-tag">Conclusión</div>
+  <div class="slide" data-index="11">
+    <div class="tag">Conclusión</div>
     <h2>¿Qué enseñanza deja para la actualidad?</h2>
     <p>
       Conocer el origen histórico de estas desigualdades nos permite entenderlas mejor y valorar los derechos
       que se han conquistado con el tiempo, como la igualdad ante la ley, la educación para todos y la
       participación ciudadana.
     </p>
-    <p>
-      También nos recuerda que, como sociedad, aún tenemos desafíos pendientes.
-    </p>
-    <p style="margin-top:auto; text-align:center; color:var(--ink-soft); font-family:Arial, sans-serif; font-size:0.9rem;">
+    <p>También nos recuerda que, como sociedad, aún tenemos desafíos pendientes.</p>
+    <p style="margin-top:auto; text-align:center; color:var(--ink-soft); font-family:'Trebuchet MS', Arial, sans-serif; font-size:0.9rem;">
       Gracias por su atención · Sebastián Obach · 8°B
     </p>
   </div>
@@ -417,12 +394,13 @@
 
 <div class="controls">
   <button class="nav-btn" id="prevBtn" aria-label="Anterior">‹</button>
-  <span class="counter" id="counter">1 / 11</span>
+  <span class="counter" id="counter">1 / 12</span>
   <button class="nav-btn" id="nextBtn" aria-label="Siguiente">›</button>
 </div>
 <div class="hint">Usa las flechas ← → o haz clic para avanzar</div>
 
 <script>
+  /* ---------- Slide navigation ---------- */
   const slides = Array.from(document.querySelectorAll('.slide'));
   const total = slides.length;
   const dotsContainer = document.getElementById('dots');
@@ -468,12 +446,170 @@
   });
 
   document.getElementById('deck').addEventListener('click', (e) => {
-    if(e.target.closest('.nav-btn') || e.target.closest('.dot')) return;
+    if(e.target.closest('.nav-btn') || e.target.closest('.dot') ||
+       e.target.closest('.flip-card') || e.target.closest('tr') ||
+       e.target.closest('.opt')) return;
     const rect = document.getElementById('deck').getBoundingClientRect();
     const x = e.clientX - rect.left;
     if (x > rect.width / 2) goTo(current + 1);
     else goTo(current - 1);
   });
+
+  /* ---------- Flip cards: grupos sociales ---------- */
+  const socialGroups = [
+    { front: 'Peninsulares', back: 'Españoles nacidos en España. Ocupaban los cargos más altos del gobierno colonial.' },
+    { front: 'Criollos', back: 'Hijos de españoles nacidos en América. Tenían riqueza pero menos poder político que los peninsulares.' },
+    { front: 'Mestizos', back: 'Hijos de españoles e indígenas. Grupo intermedio, con pocos derechos y oportunidades limitadas.' },
+    { front: 'Indígenas', back: 'Pueblos originarios sometidos a trabajo forzado (encomienda, mita) y despojo de tierras.' },
+    { front: 'Esclavos africanos', back: 'Personas traídas por la fuerza desde África, sin ningún derecho, tratadas como propiedad.' },
+    { front: 'La Iglesia', back: 'Institución muy poderosa: controlaba la educación, la evangelización y gran parte de la vida social.' }
+  ];
+
+  function buildFlipGrid(containerId, items){
+    const container = document.getElementById(containerId);
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'flip-card';
+      card.innerHTML = `
+        <div class="flip-inner">
+          <div class="flip-front">${item.front}</div>
+          <div class="flip-back">${item.back}</div>
+        </div>`;
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      container.appendChild(card);
+    });
+  }
+  buildFlipGrid('socialGrid', socialGroups);
+
+  const legacyItems = [
+    { front: 'Damero urbano', back: 'Muchas ciudades chilenas conservan el trazado en cuadrícula colonial con una plaza central.' },
+    { front: 'Desigualdad económica', back: 'La concentración de tierra y riqueza en pocas familias tiene raíces en las haciendas coloniales.' },
+    { front: 'Discriminación indígena', back: 'La discriminación hacia los pueblos originarios persiste en distintos ámbitos de la vida actual.' },
+    { front: 'Influencia religiosa', back: 'Tradiciones y festividades católicas siguen muy presentes en la cultura chilena.' },
+    { front: 'Concentración de poder', back: 'Ciertas familias e instituciones mantienen influencia heredada desde la época colonial.' },
+    { front: 'Idioma y costumbres', back: 'El español, muchas comidas y costumbres cotidianas provienen directamente del período colonial.' }
+  ];
+  buildFlipGrid('legacyGrid', legacyItems);
+
+  /* ---------- Interactive comparison table ---------- */
+  const compareRows = [
+    { aspecto:'Organización social', colonial:'Rígida y jerárquica', actual:'Formalmente igualitaria ante la ley',
+      detail:'Detalle: hoy persisten desigualdades económicas heredadas, aunque la ley trata a todos por igual.' },
+    { aspecto:'Trabajo', colonial:'Encomienda, mita, esclavitud', actual:'Trabajo remunerado y regulado',
+      detail:'Detalle: existen el Código del Trabajo, sindicatos y organismos como la Dirección del Trabajo.' },
+    { aspecto:'Educación', colonial:'Solo élite española/criolla', actual:'Derecho universal y gratuito',
+      detail:'Detalle: la educación es obligatoria hasta la enseñanza media en Chile.' },
+    { aspecto:'Participación política', colonial:'Solo cabildos de criollos ricos', actual:'Voto universal desde los 18 años',
+      detail:'Detalle: el voto en Chile es universal, secreto e informado desde la mayoría de edad.' },
+    { aspecto:'Derechos de la mujer', colonial:'Sin participación pública', actual:'Igualdad legal de derechos',
+      detail:'Detalle: las mujeres pueden votar en Chile desde 1949 (elecciones presidenciales).' }
+  ];
+
+  function buildCompareTable(){
+    const table = document.getElementById('compareTable');
+    let html = '<thead><tr><th>Aspecto</th><th>Sociedad colonial</th><th>Sociedad actual</th></tr></thead><tbody>';
+    compareRows.forEach((r, i) => {
+      html += `<tr class="clickable" data-target="detail-${i}">
+                 <td>${r.aspecto}</td><td>${r.colonial}</td><td>${r.actual}</td>
+               </tr>
+               <tr class="row-detail" id="detail-${i}"><td colspan="3">${r.detail}</td></tr>`;
+    });
+    html += '</tbody>';
+    table.innerHTML = html;
+    table.querySelectorAll('tr.clickable').forEach(row => {
+      row.addEventListener('click', () => {
+        document.getElementById(row.dataset.target).classList.toggle('show');
+      });
+    });
+  }
+  buildCompareTable();
+
+  /* ---------- Quiz ---------- */
+  const quizData = [
+    {
+      q: '¿Qué era la "encomienda" en la época colonial?',
+      options: [
+        'Un sistema de trabajo forzado para la población indígena',
+        'Un tipo de moneda usada por los españoles',
+        'Un impuesto que pagaban solo los peninsulares',
+        'Una fiesta religiosa colonial'
+      ],
+      correct: 0
+    },
+    {
+      q: '¿Quiénes podían participar en el cabildo colonial?',
+      options: [
+        'Todos los habitantes por igual',
+        'Solo las mujeres de la élite',
+        'Principalmente criollos con recursos',
+        'Solo los esclavos africanos'
+      ],
+      correct: 2
+    },
+    {
+      q: '¿Qué característica urbana colonial se conserva en muchas ciudades chilenas hoy?',
+      options: [
+        'Los rascacielos',
+        'El trazado en damero con plaza central',
+        'Las murallas defensivas',
+        'Los puertos de esclavos'
+      ],
+      correct: 1
+    },
+    {
+      q: '¿Cuál es una diferencia clave entre la sociedad colonial y la actual en Chile?',
+      options: [
+        'Hoy no existen las ciudades',
+        'En la Colonia todos tenían los mismos derechos',
+        'Hoy existe el voto universal desde los 18 años',
+        'La Colonia tenía educación gratuita para todos'
+      ],
+      correct: 2
+    }
+  ];
+
+  let score = 0;
+  let answered = 0;
+
+  function buildQuiz(){
+    const container = document.getElementById('quizContainer');
+    quizData.forEach((item, qi) => {
+      const block = document.createElement('div');
+      block.className = 'quiz-q';
+      block.innerHTML = `<h3>${qi+1}. ${item.q}</h3><div class="options"></div>`;
+      const optsDiv = block.querySelector('.options');
+      item.options.forEach((optText, oi) => {
+        const opt = document.createElement('div');
+        opt.className = 'opt';
+        opt.textContent = optText;
+        opt.addEventListener('click', () => {
+          if(opt.parentElement.dataset.answered) return;
+          opt.parentElement.dataset.answered = 'true';
+          const allOpts = Array.from(opt.parentElement.children);
+          allOpts.forEach(o => o.classList.add('disabled'));
+          if(oi === item.correct){
+            opt.classList.add('correct');
+            score++;
+          } else {
+            opt.classList.add('wrong');
+            allOpts[item.correct].classList.add('correct');
+          }
+          answered++;
+          updateScore();
+        });
+        optsDiv.appendChild(opt);
+      });
+      container.appendChild(block);
+    });
+  }
+
+  function updateScore(){
+    document.getElementById('scoreBox').textContent =
+      'Puntaje: ' + score + ' / ' + quizData.length +
+      (answered === quizData.length ? '  ·  ¡Quiz completado! 🎓' : '');
+  }
+
+  buildQuiz();
 
   render();
 </script>
