@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparación entre la sociedad colonial y la sociedad actual</title>
+<style>
+  :root{
+    --bg:#faf6ef;
+    --ink:#2b2117;
+    --ink-soft:#5a4c3c;
+    --accent:#8a3324;
+    --accent-2:#c99a3f;
+    --card:#ffffff;
+    --border:#e4d9c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Georgia', 'Times New Roman', serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+  }
+  header{
+    background:linear-gradient(135deg,var(--accent) 0%,#5e2419 100%);
+    color:#f6ead9;
+    padding:64px 24px 48px;
+    text-align:center;
+  }
+  header .kicker{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.8rem;
+    opacity:0.85;
+    font-family:Arial, sans-serif;
+  }
+  header h1{
+    font-size:2.1rem;
+    margin:14px 0 8px;
+    max-width:820px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  header p.subtitle{
+    font-family:Arial, sans-serif;
+    font-size:1rem;
+    opacity:0.9;
+  }
+  nav{
+    background:#fffdf9;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    gap:24px;
+    justify-content:center;
+    padding:12px 16px;
+    flex-wrap:wrap;
+    font-family:Arial, sans-serif;
+    font-size:0.9rem;
+  }
+  nav a{
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:600;
+  }
+  nav a:hover{ text-decoration:underline; }
+  main{
+    max-width:860px;
+    margin:0 auto;
+    padding:40px 24px 80px;
+  }
+  section{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:32px 36px;
+    margin-bottom:32px;
+    box-shadow:0 2px 10px rgba(60,40,20,0.05);
+  }
+  section h2{
+    color:var(--accent);
+    font-size:1.5rem;
+    margin-top:0;
+    border-bottom:2px solid var(--accent-2);
+    padding-bottom:10px;
+  }
+  section h3{
+    color:var(--ink-soft);
+    font-size:1.1rem;
+    margin-bottom:6px;
+  }
+  .badge{
+    display:inline-block;
+    font-family:Arial, sans-serif;
+    font-size:0.75rem;
+    background:var(--accent-2);
+    color:#3a2c10;
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  ul{padding-left:22px;}
+  li{margin-bottom:8px;}
+  .curioso{
+    background:#fbf1de;
+    border-left:4px solid var(--accent-2);
+    padding:16px 20px;
+    border-radius:6px;
+    margin:20px 0;
+  }
+  .curioso strong{color:var(--accent);}
+  .comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    font-family:Arial, sans-serif;
+    font-size:0.92rem;
+  }
+  .comparison-table th, .comparison-table td{
+    border:1px solid var(--border);
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+  }
+  .comparison-table th{
+    background:var(--accent);
+    color:#fff;
+  }
+  .comparison-table tr:nth-child(even){background:#faf6ef;}
+  .img-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:16px;
+    margin:20px 0;
+  }
+  .img-placeholder{
+    background:#efe4cf;
+    border:1px dashed var(--accent-2);
+    border-radius:8px;
+    aspect-ratio:4/3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-soft);
+    font-family:Arial, sans-serif;
+    font-size:0.85rem;
+    text-align:center;
+    padding:12px;
+  }
+  .timeline{
+    font-family:Arial, sans-serif;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+  }
+  footer{
+    text-align:center;
+    font-family:Arial, sans-serif;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    padding:24px;
+  }
+  .minutes{
+    font-family:Arial, sans-serif;
+    font-size:0.8rem;
+    color:var(--accent);
+    font-weight:700;
+    float:right;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Colegio Montahue Peñalolén · 8° Básico · Historia y Geografía</div>
+  <h1>Comparación entre la sociedad colonial y la sociedad actual</h1>
+  <p class="subtitle">Disertación · Época Colonial de Chile · Sebastián Obach</p>
+</header>
+
+<nav>
+  <a href="#introduccion">Introducción</a>
+  <a href="#desarrollo">Desarrollo</a>
+  <a href="#tabla">Comparación</a>
+  <a href="#curioso">Dato curioso</a>
+  <a href="#conclusion">Conclusión</a>
+</nav>
+
+<main>
+
+  <section id="introduccion">
+    <span class="minutes">1 min</span>
+    <h2>Introducción</h2>
+    <p><strong>Tema:</strong> Comparación entre la sociedad colonial y la sociedad actual.</p>
+    <p class="timeline"><strong>Período:</strong> Época Colonial de Chile, aproximadamente entre 1541 (fundación de Santiago) y 1810 (inicio del proceso de independencia).</p>
+    <p>
+      Estudiar la sociedad colonial y compararla con la sociedad actual es importante porque nos permite
+      entender de dónde vienen muchas de las costumbres, desigualdades y estructuras que todavía existen en Chile.
+      La Colonia dejó una huella profunda en la forma en que se organiza el trabajo, la educación, los derechos
+      de las personas y la vida en las ciudades. Comparar ambos períodos ayuda a valorar los cambios logrados
+      y a reflexionar sobre lo que aún falta por mejorar como sociedad.
+    </p>
+  </section>
+
+  <section id="desarrollo">
+    <span class="minutes">7 min</span>
+    <h2>Desarrollo del tema</h2>
+
+    <h3>1. Organización social colonial</h3>
+    <p>
+      La sociedad colonial estaba dividida en grupos muy rígidos y desiguales: peninsulares (españoles nacidos
+      en España), criollos (hijos de españoles nacidos en América), mestizos, indígenas y esclavos africanos.
+      El lugar que ocupaba una persona en esta pirámide social determinaba casi todos los aspectos de su vida:
+      qué trabajo podía tener, si podía estudiar, qué cargos públicos podía ocupar y hasta con quién podía casarse.
+      No existía la idea de que todas las personas nacieran con los mismos derechos.
+    </p>
+
+    <h3>2. Sistemas de trabajo colonial</h3>
+    <p>
+      Durante la Colonia se utilizaron sistemas de trabajo obligatorio y muy injustos para la población indígena,
+      como la <strong>encomienda</strong> (los indígenas debían trabajar y pagar tributo a un encomendero a
+      cambio de "protección" y evangelización) y más tarde la mita. Estos sistemas se basaban en el trabajo
+      forzado, con jornadas extensas y sin remuneración justa, y estuvieron acompañados también de la
+      esclavitud de personas afrodescendientes.
+    </p>
+
+    <h3>3. Derechos de las personas</h3>
+    <p>
+      En la Colonia los derechos dependían del origen étnico, el género y la posición social. Los indígenas y
+      los esclavos prácticamente no tenían derechos legales propios, las mujeres no podían participar en la
+      vida pública ni política, y solo un grupo reducido de hombres españoles o criollos con recursos accedía
+      a la educación, la propiedad y los cargos de poder.
+    </p>
+
+    <h3>4. Educación, trabajo y participación ciudadana hoy</h3>
+    <p>
+      En la actualidad, al menos en el plano legal, todas las personas son consideradas iguales ante la ley:
+      existe el derecho a la educación gratuita y obligatoria, el trabajo está regulado por leyes laborales
+      (sueldo mínimo, jornada de trabajo, seguridad social) y todas las personas mayores de edad pueden votar
+      y participar en la vida política del país, sin importar su origen o género.
+    </p>
+
+    <h3>5. Elementos del pasado colonial que aún permanecen</h3>
+    <ul>
+      <li>Desigualdad económica y social heredada entre distintos grupos de la población.</li>
+      <li>Concentración de la tierra y la riqueza en pocas familias, con raíces en el sistema de haciendas coloniales.</li>
+      <li>Discriminación hacia los pueblos indígenas, que persiste en distintos ámbitos de la vida actual.</li>
+      <li>Ciudades organizadas en torno a una plaza central, herencia directa del trazado urbano colonial.</li>
+      <li>Influencia de la Iglesia Católica en tradiciones, festividades y en parte de la cultura chilena.</li>
+    </ul>
+
+    <div class="img-gallery">
+      <div class="img-placeholder">Imagen: pirámide social colonial<br>(reemplazar por imagen real)</div>
+      <div class="img-placeholder">Imagen: trabajadores en la encomienda<br>(reemplazar por imagen real)</div>
+      <div class="img-placeholder">Imagen: sociedad chilena actual<br>(reemplazar por imagen real)</div>
+    </div>
+  </section>
+
+  <section id="tabla">
+    <h2>Cuadro comparativo</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Aspecto</th>
+          <th>Sociedad colonial</th>
+          <th>Sociedad actual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Organización social</td>
+          <td>Rígida y jerárquica (peninsulares, criollos, mestizos, indígenas, esclavos)</td>
+          <td>Formalmente igualitaria ante la ley, aunque persisten desigualdades económicas</td>
+        </tr>
+        <tr>
+          <td>Trabajo</td>
+          <td>Encomienda, mita y esclavitud; trabajo forzado y sin derechos</td>
+          <td>Trabajo remunerado, regulado por leyes laborales y sindicatos</td>
+        </tr>
+        <tr>
+          <td>Educación</td>
+          <td>Reservada casi exclusivamente a hombres españoles/criollos de élite</td>
+          <td>Derecho universal, gratuita y obligatoria hasta la enseñanza media</td>
+        </tr>
+        <tr>
+          <td>Participación política</td>
+          <td>Solo cabildos con participación limitada a criollos ricos</td>
+          <td>Voto universal desde los 18 años, elecciones periódicas</td>
+        </tr>
+        <tr>
+          <td>Derechos de la mujer</td>
+          <td>Sin participación pública ni política; rol doméstico impuesto</td>
+          <td>Igualdad legal de derechos, acceso a educación, trabajo y política</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="curioso">
+    <h2>Dato curioso</h2>
+    <div class="curioso">
+      <strong>¿Sabías que...?</strong> Muchas ciudades chilenas actuales, como Santiago, La Serena o Concepción,
+      todavía conservan el "damero" o trazado en cuadrícula que impusieron los españoles en la época colonial,
+      con una plaza de armas central rodeada por la iglesia, el cabildo y las casas de las familias más
+      importantes. ¡Ese diseño urbano tiene casi 500 años y sigue determinando cómo nos movemos por el centro
+      de nuestras ciudades hoy en día!
+    </div>
+  </section>
+
+  <section id="conclusion">
+    <span class="minutes">2 min</span>
+    <h2>Conclusión</h2>
+    <h3>¿Qué fue lo más importante que aprendí?</h3>
+    <p>
+      Lo más importante que aprendí es que la sociedad actual no surgió de la nada: muchas de las estructuras,
+      desigualdades y también los avances que tenemos hoy son consecuencia directa de decisiones y sistemas
+      que se establecieron durante la Colonia.
+    </p>
+    <h3>¿Qué impacto tuvo este tema en la historia de Chile?</h3>
+    <p>
+      La organización social colonial marcó profundamente la formación de Chile como país, generando
+      desigualdades que se mantuvieron mucho después de la independencia y que incluso hoy siguen siendo
+      parte del debate público.
+    </p>
+    <h3>¿Qué enseñanza deja para la actualidad?</h3>
+    <p>
+      Conocer el origen histórico de estas desigualdades nos permite entenderlas mejor y valorar los derechos
+      que se han conquistado con el tiempo, como la igualdad ante la ley, la educación para todos y la
+      participación ciudadana, además de recordarnos que como sociedad aún tenemos desafíos pendientes.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Disertación · Historia y Geografía · Época Colonial · 8° Básico B · Colegio Montahue Peñalolén
+</footer>
+
+</body>
+</html>
